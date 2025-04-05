@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/radiuivb/test.radiantnerd.com
+    - /bin/cp -R images $DEPLOYPATH
