@@ -1,11 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExampleController;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [ExampleController::class, "home"])->name('home');
+
+Route::get('/unreal', [ExampleController::class, "unreal"]);
+
+Route::get('/services', [ExampleController::class, "services"]);
+
+Route::get('/about', [ExampleController::class, "about"]);
+
+Route::get('/contact', [ExampleController::class, "contact"]);
+
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
